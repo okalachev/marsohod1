@@ -1,0 +1,179 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	background: url(/img/p.jpg) left bottom fixed no-repeat;
+	font-size: 12px;
+	padding: 0;
+	margin: 0;
+}
+.album-view {
+	height: 400px;
+	position: relative;
+	margin: auto;
+}
+.album-view.risunki {
+	width: 859px;
+	background: url(/img/disc/risunki_open.png) no-repeat;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 15px;
+}
+.album-view.risunki.cover {
+	background-image: url(/img/disc/risunki_cover.png);
+	background-position: right top;
+}
+.album-view.cover * { /* Когда альбом закрыт, в нем ничего не видно */
+	display: none;
+}
+.album-view.risunki #description {
+	padding: 23px 0 0 35px;
+	width: 373px;
+}
+.album-view.risunki h1 {
+	font-size: 21px;
+	margin: 0;
+	text-align: center;
+}
+.album-view.risunki h2 {
+	font-size: 23px;
+	margin: 0;
+	font-weight:normal;
+}
+.album-view.risunki #songlist {
+	margin: 27px 0 0px 0;
+	padding-left: 30px;
+	display: inline-block;
+	font-size: 16px;
+}
+.album-view.risunki #songlist li {
+	/*height: 22px;*/
+}
+.album-view.risunki #info {
+	float: right;
+	margin-top: 22px;
+	margin-right:12px;
+}
+.album-view.risunki #links {
+	/*margin-top: 59px;*/
+	margin-top: 25px;
+}
+.album-view.risunki a {
+	color: black;
+}
+.album-view.risunki #disc {
+	awidth:379px;
+	aheight:379px;
+	abackground: url(/img/disc/risunki_cd.png) no-repeat;
+	position: absolute;
+	top: 14px;
+	right: 14px;
+}
+.album-view #player {
+	margin-bottom: 36px;
+	margin-left: 27px;
+}
+button.play {
+	background: url(/img/playbutton.png);
+	width: 16px;
+	height: 16px;
+	border: none;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.albumlist {
+	float: left;
+	text-align: center;
+	width: 190px;
+}
+.albumlist img {
+	box-shadow: 1px 1px 4px gray;
+}
+#header {
+	color: #eaeeff;
+	font-size: 28px;
+	text-align: center;
+	padding: 10px 20px;
+	background: black;
+}
+#header a {
+	margin-right: 50px;
+	margin-left: 50px;
+	color: #7b94ff;
+	text-align: center;
+}
+#header a.main {
+	color: #eaeeff;
+}
+#mainmenu {
+	width: 800px;
+	height: 175px;
+	background: url(/img/mainmenu.jpg) no-repeat;
+	float: right;
+	position:relative;
+}
+#mainmenu a {
+	position: absolute;
+}
+#mainmenu .main{
+	height: 85px;
+	left: 21px;
+	top: 50px;
+	width: 288px;
+}
+#mainmenu .concerts{
+	height: 62px;
+	left: 344px;
+	top: 52px;
+	width: 229px;
+
+}
+#mainmenu .records{
+	height: 56px;
+	left: 614px;
+	top: 51px;
+	width: 144px;
+}
+#submenu {
+	background: url(/img/submenu.png) repeat-x #e0e0e0;
+}
+#submenu a {
+	display: inline-block;
+	padding: 10px;
+	text-align: center;
+	color: black;
+}
+#submenu a:hover {
+	background: #a5a5a5;
+}
+.frames {
+	height:124px;
+}
+#header, #submenu, #content {
+	border-bottom: gray 1px solid;
+}
+#content {
+	/*margin-left: 200px;*/
+	padding: 5px 20px;
+	abackground: url(/img/transp80.png);
+	background: white;
+}
+p {
+	text-indent: 15px;
+}
+#page {
+	width: 900px;
+	margin: auto;
+	border-right: gray 1px solid;
+	border-left: gray 1px solid;
+}
+.submenu { display: none }
+a.timg { float: right; clear: right; margin: 0 0 8px 10px; background: #E0E0E0; padding: 8px; display: block; text-indent:0; }
+a.timg img { height: 120px; }
+a.timg:hover { background: #CCCCCC; }
+a.timg.l { float: left; clear: left; margin: 0 10px 8px 0; }
+.frameholes, hr { 
+	background: white url(/img/framehole.png) repeat-x 0px 2px;
+	height: 17px;
+}
+hr { 
+	border: none;
+	width: 810px; 
+}

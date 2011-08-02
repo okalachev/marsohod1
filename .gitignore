@@ -1,2 +1,4 @@
 twig
 .idea
+cache
+.gitignore

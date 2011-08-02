@@ -1,0 +1,5 @@
+{% macro thumb(url, left) %}
+	<a href='/img/photo/{{ url }}.jpg' class='timg {% if left %}t{% endif %}'>
+		<img src='/img/photo/{{ url }}.jpg'>
+	</a>
+{% endmacro %}
