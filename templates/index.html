@@ -1,5 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-	Welcome, блять.
+	<div style="margin-top: 50px; text-align: center; height: 700px;">
+		<img src="/img/welcome_tr.png" width="600px"/>
+	</div>
+	<script type="text/javascript">
+		var
+			angle=0,
+			$welcomeImg = $('#content img');
+
+		$(window).mousemove(
+			function(event) {
+				var angle = 360 * event.pageX / $(window).width();
+				$welcomeImg.rotate(angle);
+			}
+		);
+/*
+		setInterval(
+			function doRotate() {
+				$welcomeImg.rotate(angle);
+				angle++;
+			},
+			20
+		);
+*/
+	</script>
 {% endblock %}

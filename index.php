@@ -11,7 +11,8 @@ $pages = array(
 	'/index.html'=>'index',
 	'/index.php'=>'index',
 	'index'=>'index',
-	'/records/risunki'=>'risunki'
+	'/records/risunki'=>'risunki',
+	'/base'=>'pano'
 );
 
 $query = $_SERVER['REQUEST_URI'];

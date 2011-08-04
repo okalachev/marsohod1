@@ -12,7 +12,7 @@
 	["Out-music", "out"],
 ] %}
 
-{% set album="risnuki" %}
+{% set album="risunki" %}
 
 {% block title %}Демо «Рисунки»{% endblock %}
 
@@ -31,14 +31,14 @@
 			{% for song in songs %}
 			<li>
 				<button class=play onclick="document.getElementById('player').dewgo({{ loop.index }});document.getElementById('player').dewplay();"></button>
-				<a href="/mp3/{{ album }}/{{ song.1 }} .mp3">{{ song.0 }}</a>
+				<a href="/mp3/{{ album }}/{{ song.1 }}.mp3">{{ song.0 }}</a>
 			</li>
 			{% endfor %}
 		</ol>
 		<object type="application/x-shockwave-flash" data="/swf/dewplayer-multi.swf" width="240" height="20" id="player" name="player">
 			<param name="wmode" value="transparent" />
 			<param name="movie" value="/swf/dewplayer-multi.swf" />
-			<param name="flashvars" value="showtime=on&javascript=on&xml=/risunki.xml" />
+			<param name="flashvars" value="showtime=on&javascript=on&xml=/mp3/{{ album }}/{{ album }}.xml" />
 		</object>
 		<div>Слова и музыка &mdash; Imagine nothing</div>
 		<div id=links>
