@@ -1,6 +1,5 @@
 body {
 	font-family: Helvetica, Arial, sans-serif;
-	background: url(/img/p.jpg) left bottom fixed no-repeat;
 	font-size: 12px;
 	padding: 0;
 	margin: 0;
@@ -133,7 +132,8 @@ button.play {
 	width: 144px;
 }
 #submenu {
-	background: url(/img/submenu.png) repeat-x #e0e0e0;
+	white-space: nowrap;
+	overflow-x: scroll;
 }
 #submenu a {
 	display: inline-block;
@@ -142,13 +142,13 @@ button.play {
 	color: black;
 }
 #submenu a:hover {
-	background: #a5a5a5;
+	background: #ccccff;
 }
 .frames {
 	height:124px;
 }
 #header, #submenu, #content {
-	border-bottom: gray 1px solid;
+
 }
 #content {
 	/*margin-left: 200px;*/
@@ -163,8 +163,6 @@ p {
 #page {
 	width: 900px;
 	margin: auto;
-	border-right: gray 1px solid;
-	border-left: gray 1px solid;
 }
 .submenu { display: none }
 a.timg { float: right; clear: right; margin: 0 0 8px 10px; background: #E0E0E0; padding: 8px; display: block; text-indent:0; }
