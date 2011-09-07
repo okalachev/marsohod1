@@ -16,6 +16,7 @@
 		function menu(n) {
 			$('.submenu').hide();
 			$('#submenu'+n).show();
+			return false;
 		}
 		$(function() {
 			$('a.timg').lightBox({txtImage: '#', txtOf: 'из'});
@@ -45,13 +46,13 @@
 			</div>
 			<div id=submenu1 class=submenu>
 				<a href='/concerts'>Концерты</a>
-				<a href='/video'>Видео</a>
-				<a href='/photo'>Фото</a>
+				<a href='/video'><img src="/img/i_video.png"><br>Видео</a>
+				<a href='/photo'><img src="/img/i_photos.png"><br>Фото</a>
 				<a href='/rider'>Райдер :)</a>
 			</div>
 			<div id=submenu2 class=submenu>
 				<a href="/records/risunki"><img src='/img/disc/risunki_t.png' title='"Рисунки" (2009)'><br>Демо &laquo;<em>Рисунки</em>&raquo; (2009)</a>
-				<a href="/records/unknown"><img src='/img/disc/new_t.png' title='Запись планируется в апреле-мае (2011)'><br>(2011)</a>
+				<a href="/records/2011"><img src='/img/disc/new_t.png' title='Запись планируется в апреле-мае (2011)'><br>(2011)</a>
 			</div>
 		</div>
 
