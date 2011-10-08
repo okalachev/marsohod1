@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% import "macros/photo.html" as photo %}
+{% import "macros/flash.html" as flash %}
+{% block title %}Демо 2011{% endblock %}
+
+{% block content %}
+
+<h1>Календарь <div style="float: right;margin-top:6px;">{{ flash.dew("/calendar.xml") }}</div></h1>
+
+{% for p in photos %}
+	{{ photo.thumb(p) }}
+{% endfor %}
+
+<div class="calendar-tracklist">
+	<div class="position"></div>
+	{% for track in album.tracks %}
+		<div class="track" onclick="document.getElementById('player').dewgo({{ loop.index }});document.getElementById('player').dewplay();">
+			<img class="bg" src="/img/calendar-viz/{{ loop.index }}.png"/>
+			<div class="label">{{ loop.index }}. {{ track.title }}</div>
+		</div>
+	{% endfor %}
+</div>
+
+<hr>
+
+<h2>Участвовали</h2>
+
+<ul>
+	<li>Гамза Евгений &mdash; голос, труба, шейкер, вода</li>
+	<li>Шлыков Алексей &mdash; гитары, пианино, шумы</li>
+	<li>Калачев Олех &mdash; бас-гитара, пианино, бэк-вокал, шейкер, варган</li>
+	<li>Лаппо Анджей &mdash; барабаны, тарелки, шейкер</li>
+</ul>
+
+<h2>О записи</h2>
+
+<p>
+	Второе демо было записано на студии <a href="http://www.bora-records.ru/">bora-records</a> звукорежиссёром Юрием, а сведено на домашней студии силами самих участников группы и звукорежиссёра Григория Новикова.
+	Эта демка разительно отличается от предыдущей подходом к записи. Если в первом демо все треки были записаны живьем (кроме голоса), то во второй записи были испробованы разные способы. Некоторые треки писались живьем, в других живьем писались ритм секция, на которую впоследствии накладывались остальные инструменты, остальные же записывались по одному.
+</p>
+<p>
+	Во втором демо появилось больше экспериментов со звучанием композиций и применением не только стандартного набора инструментов (барабаны, бас, гитара, голос). Например, были использованы пианино, труба, акустическая гитара, вода, варган.
+	Группа не отошла от импровизаций, и в процессе записи появлялось много новых идеи и партий, которые и вошли в конечные версии песен, заменив старые.
+</p>
+
+<h2>Тексты</h2>
+{% for track in album.tracks %}
+	{% if track.lyrics %}
+		<h3>{{ track.title }}</h3>
+		<pre class=lyrics>{{ track.lyrics }}</pre>
+	{% endif %}
+{% endfor %}
+
+<hr>
+
+{% endblock %}

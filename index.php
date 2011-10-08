@@ -1,58 +1,28 @@
 <?
 
-// Settings
+include "settings.base.php";
+include "settings.local.php";
 
-$settings['cache_templates'] = true;
-$settings['debug'] = false;
-$settings['url_base'] = '';
+include "Router.php";
+include "Renderer.php";
+include "Site.php";
 
-include("local_settings.php");
+$renderer = new Renderer();
+$site = new Site($renderer);
 
-// Initialize Twig
+$router = new Router();
+// Index page
+$router->add_route(array('/', '/index.html', '/index.php', '/index/'), $site, 'page', 'index');
+// Simple pages
+$router->add_route('/base/', $site, 'page', 'pano');
+$router->add_route('/band/', $site, 'page', 'band');
+$router->add_route('/calls/', $site, 'page', 'calls');
+$router->add_route('/video/', $site, 'page', 'video');
+// Albums
+$router->add_route('/records/risunki/', $site, 'album', 'risunki');
+$router->add_route('/records/calendar/', $site, 'album', 'calendar');
+// Album XMLs
+$router->add_route('/risunki.xml', $site, 'album_xml', 'risunki');
+$router->add_route('/calendar.xml', $site, 'album_xml', 'calendar');
 
-require_once '/twig/Autoloader.php';
-Twig_Autoloader::register();
-
-$loader = new Twig_Loader_Filesystem('templates');
-
-$twig_settings = array('debug'=>$settings['debug']);
-if($settings['cache_templates']) {
-	$twig_settings['cache'] = 'cache';
-}
-
-$twig = new Twig_Environment($loader, $twig_settings);
-
-// Parse URL
-
-$real_query = $_SERVER['REQUEST_URI'];
-$query = preg_replace('/(\/+)/', '/', $real_query); // Removing unnecessary slashes
-
-$pages = array(
-	'/'=>'index',
-	'/index.html'=>'index',
-	'/index.php'=>'index',
-	'/index'=>'index',
-	'/records/risunki'=>'risunki',
-	'/records/2011'=>'demo2011',
-	'/base'=>'pano',
-	'/photo'=>'photo'
-);
-
-// Responding
-
-if (isset($pages[$query])) {
-	if($real_query != $query) {
-		// Redirect to correct URL
-		Header('HTTP/1.1 301 Moved Permanently');
-		Header('Location: ' . $settings['url_base'] . $query);
-	} else {
-		// Render page
-		$template_name = $pages[$query] . '.html';
-		$template = $twig->loadTemplate($template_name);
-		echo $template->render(array());
-	}
-} else {
-	// Error 404
-	Header('HTTP/1.1 404 Not Found');
-	echo '404';
-}
+$router->route($_SERVER['REQUEST_URI']);

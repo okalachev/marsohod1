@@ -1,4 +1,8 @@
 twig
 .idea
+nbproject
 cache
-.gitignore
+__*
+*.mp3
+media/photo/*
+media/thumb/*

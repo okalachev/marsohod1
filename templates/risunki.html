@@ -1,18 +1,6 @@
 {% extends "base.html" %}
 {% import "macros/photo.html" as photo %}
-
-{% set songs = [
-	["Нежность", "nezhnost"],
-	["Параноик", "paranoik"],
-	["Britpop", "britpop"],
-	["Лист", "list"],
-	["Один", "odin"],
-	["Cowshaker", "cowshaker"],
-	["Рисунки", "risunki"],
-	["Out-music", "out"],
-] %}
-
-{% set album="risunki" %}
+{% import "macros/flash.html" as flash %}
 
 {% block title %}Демо «Рисунки»{% endblock %}
 
@@ -28,18 +16,14 @@
 			Олех Калачев &mdash;<br>бас-гитары, вокал<br>
 		</div>
 		<ol id=songlist>
-			{% for song in songs %}
+			{% for track in album.tracks %}
 			<li>
 				<button class=play onclick="document.getElementById('player').dewgo({{ loop.index }});document.getElementById('player').dewplay();"></button>
-				<a href="/mp3/{{ album }}/{{ song.1 }}.mp3">{{ song.0 }}</a>
+				<a href="/media/audio/{{ album.folder }}/{{ track.filename }}">{{ track.title }}</a>
 			</li>
 			{% endfor %}
 		</ol>
-		<object type="application/x-shockwave-flash" data="/swf/dewplayer-multi.swf" width="240" height="20" id="player" name="player">
-			<param name="wmode" value="transparent" />
-			<param name="movie" value="/swf/dewplayer-multi.swf" />
-			<param name="flashvars" value="showtime=on&javascript=on&xml=/mp3/{{ album }}/{{ album }}.xml" />
-		</object>
+		{{ flash.dew("/risunki.xml") }}
 		<div>Слова и музыка &mdash; Imagine nothing</div>
 		<div id=links>
 			<a href='http://community.livejournal.com/img_nothing'>http://community.livejournal.com/img_nothing</a><br>
@@ -50,39 +34,31 @@
 	<img id=disc src='/img/disc/risunki_cd.png'>
 </div>
 <hr>
+
+{% for p in photos %}
+	{{ photo.thumb(p) }}
+{% endfor %}
+
+<h2>Участвовали</h2>
+<ul>
+	<li>Шлыков Алексей &mdash; голос, гитары, эффекты</li>
+	<li>Калачев Олех &mdash; голос, бас-гитара, электроника</li>
+	<li>Гамза Евгений &mdash; голос, барабаны, шейкер</li>
+</ul>
+
 <h2>О записи</h2>
 <p>
-	{{ photo.thumb('risunki/cds') }}
-	{{ photo.thumb('risunki/1') }}
-	{{ photo.thumb('risunki/2') }}
-	{{ photo.thumb('risunki/3') }}
-	{{ photo.thumb('risunki/4') }}
-	{{ photo.thumb('risunki/5') }}
-	{{ photo.thumb('risunki/6') }}
-	{{ photo.thumb('risunki/7') }}
-	{{ photo.thumb('risunki/8') }}
-	{{ photo.thumb('risunki/9') }}
-	{{ photo.thumb('risunki/10') }}
-	{{ photo.thumb('risunki/11') }}
-	{{ photo.thumb('risunki/12') }}
-	{{ photo.thumb('risunki/13') }}
-	{{ photo.thumb('risunki/14') }}
-	Наше первое демо было записано на студии "Нота". Бла-бла-бла.
+    Первый опыт записи на студии, уже через 2 месяца после начала совместной игры. Демо было записано на студии «Нота», за 12 часов звукорежиссером Юрием. Вся музыка писалась живьем, голос накладывался сверху в несколько слоев.
 </p>
 <p>
-	При записи мы использовали инструменты: Рустон, лопата и варган. Что интересно, вначале мы планировали записать всё за одну 6-часовую сессию.
-	Причем, мы даже не знали, сколько песен будем писать (собирались писать сколько успеем). В итоге записали 8 песен и уложились в две 6-часовых
-	сессии. Бла-бла-бла.
+    Сведение и мастеринг демо был сделан звукорежиссёром Игорем. Большая часть песен уже была готова к записи, однако некоторые из песен были доипровизированны прямо на студии, добавлены новые инструменты, электроника.
 </p>
 <p>
-
-	Песни Нежность, Britpop и ... запасаны вживую, исключая вокал.<br>
-	Фотки как мы пишем вживую.<br>
-	Песни ... записаны не вижвую<br>
+    После записи было изготовлено около 50 уникальных дисков, которые были розданы друзьям и на концертах группы.
 </p>
 <h2>Тексты</h2>
 <h3>1. Нежность</h3>
-<pre>Где твои глаза сейчас?
+<pre class="lyrics">Где твои глаза сейчас?
 Кому улыбаются?
 Сотней радужных оттенков
 Теплом наслаждаются
@@ -100,7 +76,7 @@
 А может быть сомкнуты веки сейчас,
 И ты во сне растворяешься</pre>
 <h3>2. Параноик</h3>
-<pre>Съежевшись до предела
+<pre class="lyrics">Съежевшись до предела
 Живу в своем мире
 Сознание охладело
 Помехи в телеэфире
@@ -118,7 +94,7 @@
 Забывая о примерении
 Свою жизнь переосмыслив</pre>
 <h3>4. Лист</h3>
-<pre>Упал на землю ярким пятном
+<pre class="lyrics">Упал на землю ярким пятном
 Еще радует взгляды прохожих
 Светится и дышит теплом,
 Пытается быть на себя похожим.
@@ -136,7 +112,7 @@
 Просто один и даже смерти хочется,
 Чтоб кончились все невеселые мысли.</pre>
 <h3>5. Один</h3>
-<pre>Яркий блик
+<pre class="lyrics">Яркий блик
 Отражение сотен граней
 В переплете бесполезных названий
 Потерявшийся крик
@@ -153,7 +129,7 @@
 Закончился первый виток
 Дальше шаг в темноту</pre>
 <h3>6. Cowshaker</h3>
-<pre>Не чувсвтвуя жалость
+<pre class="lyrics">Не чувсвтвуя жалость
 Пойти по головам
 Скупая усталость
 Людей превращая в хлам
@@ -170,7 +146,7 @@
 Достиг высоты
 На которой остался один</pre>
 <h3>7. Рисунки</h3>
-<pre>Яркие цвета, на сером асфальте
+<pre class="lyrics">Яркие цвета, на сером асфальте
 Дарят нам дети, рисуя солнце
 Мелками цветными свой след оставляя
 Даря нам радость и улыбок море
@@ -184,26 +160,8 @@
 Они наполняют, повсюду дороги
 Превращаясь с дождем в разводы смешные
 Обещая вернутся новой весною</pre>
-<h2>Credits</h2>
-<p>
-	Автор текстов &mdash; Алексей Шлыков.
-	<h4>Вокал</h4>
-	В треках #1, #4, #7 &mdash; Алексей Шлыков.<br>
-	В треках #2, #6 &mdash; Олег Калачев.<br>
-	В треке #5 &mdash; Евгений Гамза.
-	<h4>Бэк-вокал</h4>
-	В треках #1 и #7 &mdash; Олег Калачев.<br>
-	В треке #7 &mdash; Евгений Гамза.
-	<h4>Аранжировка</h4>
-	Трек #1 &mdash; Евгений Гамза.<br>
-	Треки #5 и #6 &mdash; Олег Калачев.
-</p>
-<p>
-	Всякие фотки с записи...<br>
-	Всякие интересные факты о записи...
-	<hr>
-	<center style='clear:both'><img src="/img/drums.gif"></center>
-</p>
+<hr>
+<center style='clear:both'><img src="/img/drums.gif"></center>
 
 <script type="text/javascript">
 	var angle = 0;

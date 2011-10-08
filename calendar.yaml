@@ -1,0 +1,17 @@
+title: Календарь
+folder: calendar
+tracks:
+  - title: Лужа
+    filename: 1 Лужа.mp3
+  - title: Космонавт
+    filename: 2 Космонавт.mp3
+  - title: Прогулка
+    filename: 4 Прогулка.mp3
+  - title: Нуль
+    filename: 3 Нуль.mp3
+  - title: Зеркало
+    filename: 5 Зеркало.mp3
+  - title: Слова на песке
+    filename: 6 Слова на песке.mp3
+  - title: Камни
+    filename: 7 Камни.mp3

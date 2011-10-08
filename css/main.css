@@ -131,24 +131,22 @@ button.play {
 	top: 51px;
 	width: 144px;
 }
-#submenu {
+#menu {
 	white-space: nowrap;
-	overflow-x: scroll;
+	overflow-x: auto;
+    text-align: center;
 }
-#submenu a {
+#menu a {
 	display: inline-block;
 	padding: 10px;
 	text-align: center;
 	color: black;
 }
-#submenu a:hover {
+#menu a:hover {
 	background: #ccccff;
 }
 .frames {
 	height:124px;
-}
-#header, #submenu, #content {
-
 }
 #content {
 	/*margin-left: 200px;*/
@@ -166,7 +164,6 @@ p {
 }
 .submenu { display: none }
 a.timg { float: right; clear: right; margin: 0 0 8px 10px; background: #E0E0E0; padding: 8px; display: block; text-indent:0; }
-a.timg img { height: 120px; }
 a.timg:hover { background: #CCCCCC; }
 a.timg.l { float: left; clear: left; margin: 0 10px 8px 0; }
 .frameholes, hr { 
@@ -177,6 +174,41 @@ hr {
 	border: none;
 	width: 810px; 
 }
-.songwords {
+.lyrics {
 	font-family: Georgia, "Times New Roman", serif;
+}
+.calendar-tracklist {
+	position: relative;
+	margin-right: 200px;
+}
+.calendar-tracklist .track {
+	position:relative;
+	height:50px;
+	margin-bottom:8px;
+	cursor: pointer;
+}
+.calendar-tracklist .label {
+	z-index:2;
+	position:absolute;
+	text-align:center;
+	font-size:1.6em;
+	width:100%;
+	top:50%;
+	margin-top:-0.5em;
+}
+.calendar-tracklist .bg {
+	height: 50px;
+	width: 100%;
+	opacity: 0.7;
+	position: absolute;
+}
+.calendar-tracklist .track:hover .bg {
+	opacity: 1;
+}
+.calendar-tracklist .position {
+	background-color: #ffffcc;
+	top: 0;
+	left: 0;
+	bottom: 0px;
+	position: absolute;
 }
