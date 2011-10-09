@@ -6,7 +6,7 @@
 	<trackList>
 		{% for track in album.tracks %}
 			<track>
-				<location>/media/audio/{{ album.folder }}/{{ track.filename }}</location>
+				<location>/media/audio/{{ album.folder }}/{{ rawurlencode(track.filename) }}</location>
 				<creator>Марсоход#1</creator>
 				<album>{{ album.title }}</album>
 				<title>{{ track.title }}</title>
