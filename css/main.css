@@ -1,3 +1,6 @@
+a img {
+	border: none;
+}
 body {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 12px;
@@ -105,7 +108,7 @@ button.play {
 #mainmenu {
 	width: 800px;
 	height: 175px;
-	background: url(/img/mainmenu.jpg) no-repeat;
+	/*background: url(/img/mainmenu.jpg) no-repeat;*/
 	float: right;
 	position:relative;
 }
@@ -146,7 +149,7 @@ button.play {
 	background: #ccccff;
 }
 .frames {
-	height:124px;
+	height:140px;
 }
 #content {
 	/*margin-left: 200px;*/
@@ -172,7 +175,6 @@ a.timg.l { float: left; clear: left; margin: 0 10px 8px 0; }
 }
 hr { 
 	border: none;
-	width: 810px; 
 }
 .lyrics {
 	font-family: Georgia, "Times New Roman", serif;
@@ -194,7 +196,9 @@ hr {
 	font-size:1.6em;
 	width:100%;
 	top:50%;
-	margin-top:-0.5em;
+	margin-top:-0.7em;
+	text-shadow: 1px 1px white;
+	font-family: Verdana, sans-serif;
 }
 .calendar-tracklist .bg {
 	height: 50px;
