@@ -2,19 +2,34 @@
 {% block content %}
 
 <h1>База для выхода в космос</h1>
-
+{#
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
 	codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0"
-	width="800" height="600" title="Hello, Panorama">
+	width="800" height="600" title="Base">
 	<param name="allowFullScreen" value="true" />
 	<param name="movie" value="pan0.swf?panoSrc=" />
 	<param name="quality" value="high" />
 	<param name="BGCOLOR" value="#AAAAAA" />
-	<embed src="pan0.swf?panoSrc=/img/pano.jpg&FOV=112" allowFullScreen="true"
+	<embed src="/media/swf/pan0.swf?panoSrc=/img/pano.jpg&FOV=112" allowFullScreen="true"
 		width="800" height="600" quality="high"
 		pluginspage="http://www.macromedia.com/go/getflashplayer"
 		type="application/x-shockwave-flash" bgcolor="#DDDDDD">
 	</embed>
 </object>
+#}
+<center>
+<object width="854" height="640"><param name="movie" value="http://pan0.net/v/up-1736"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><embed src="http://pan0.net/v/up-1736" type="application/x-shockwave-flash" width="854" height="640" allowScriptAccess="always" allowFullScreen="true"></embed></object>
+</center>
+
+<hr>
+
+<script type="text/javascript">
+	$(function() {
+		$('#content').mousewheel(function(e) {
+			e.preventDefault();
+			return false;
+		});
+	});
+</script>
 
 {% endblock %}
