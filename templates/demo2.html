@@ -5,7 +5,7 @@
 
 {% block content %}
 
-<h1>{{ album.title }} <div style="float: right;margin-top:6px;">{{ flash.dew("/calendar.xml") }}</div></h1>
+<h1><div style="float: right;margin-top:6px;">{{ flash.dew("/demo2.xml") }}</div>{{ album.title }}</h1>
 
 {% for p in photos %}
 	{{ photo.thumb(p) }}
@@ -26,10 +26,10 @@
 <h2>Участвовали</h2>
 
 <ul>
-	<li>Евгений Гамза&mdash; голос, труба, шейкер, вода</li>
-	<li>Алексей Шлыков&mdash; гитары, пианино, шумы</li>
-	<li>Олех Калачев&mdash; бас-гитара, пианино, бэк-вокал, шейкер, варган</li>
-	<li>Анджей Лаппо&mdash; барабаны, тарелки, шейкер</li>
+	<li>Евгений Гамза &mdash; голос, труба, шейкер, вода</li>
+	<li>Алексей Шлыков &mdash; гитары, пианино, шумы</li>
+	<li>Олех Калачев &mdash; бас-гитара, пианино, бэк-вокал, шейкер, варган</li>
+	<li>Анджей Лаппо &mdash; барабаны, тарелки, шейкер</li>
 </ul>
 
 <h2>О записи</h2>
