@@ -3,7 +3,8 @@
 class URLParser {
 
 	static function parse($url) {
-		return preg_replace('/(\/+)/', '/', $url);
+		$url_parsed = parse_url($url);
+		return preg_replace('/(\/+)/', '/', $url_parsed['path']);
 	}
 
 }

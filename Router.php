@@ -21,7 +21,10 @@ class Router {
 		}
 	}
 
-	function route($url) {
+	function route($url = null) {
+		if (!$url) {
+			$url = Router::get_page_path();
+		}
 		$query = URLParser::parse($url);
 		if (isset($this->routes[$query])) {
 			if ($query != $url) {
@@ -34,6 +37,22 @@ class Router {
 		} else {
 			HTTPErrors::show_404();
 		}
+	}
+	
+	static function get_page_path() {
+		return URLParser::parse(Router::full_page_url());
+	}
+
+	static function full_page_url() {
+		$pageURL = 'http';
+			if (@$_SERVER["HTTPS"] == "on") {$pageURL .= "s";}
+		$pageURL .= "://";
+		if ($_SERVER["SERVER_PORT"] != "80") {
+			$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
+		} else {
+			$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
+		}
+		return $pageURL;
 	}
 
 }
