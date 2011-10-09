@@ -1,6 +1,6 @@
 <?php
 
-require_once 'twig/Autoloader.php';
+require_once 'Twig/Autoloader.php';
 
 class Renderer {
 
@@ -16,9 +16,11 @@ class Renderer {
 		if($settings['cache_templates']) {
 			$twig_settings['cache'] = 'cache';
 		}
+		$twig_settings['autoescape'] = false;
 		$this->twig = new Twig_Environment($loader, $twig_settings);
 		if ($this->add_usefull_functions) {
 			$this->twig->addFunction('rand', new Twig_Function_Function('rand'));
+			$this->twig->addFunction('rawurlencode', new Twig_Function_Function('rawurlencode'));
 		}
 	}
 
