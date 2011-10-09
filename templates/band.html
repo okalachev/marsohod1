@@ -1,8 +1,19 @@
 {% extends "base.html" %}
+{% import "macros/photo.html" as photo %}
 
 {% block content %}
+
+{% for p in photos %}
+	{{ photo.thumb(p) }}
+{% endfor %}
+
 <h1>Марсоход#1</h1>
 <p>
-	Бла бла
+	Марсоход &mdash; один.
 </p>
+
+<img src="/img/band2.png"/>
+
+<hr>
+
 {% endblock %}
