@@ -8,6 +8,12 @@ class Site extends Controller {
 		$this->renderer->render($template_name);
 	}
 
+	function photo_page($template, $photo) {
+		$photo = $this->load_yaml_data($photo . '.photo');
+		$this->renderer->add_variable('photos', $photo);
+		$this->renderer->render($template);
+	}
+
 	function album_xml($name) {
 		$this->renderer->add_variable("album", $this->load_yaml_data($name));
 		$this->renderer->render("xml/album.xml", false);
