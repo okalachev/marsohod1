@@ -1,17 +1,24 @@
-title: Календарь
+title: 55°28'06.9" 37°17'11.9"
 folder: calendar
 tracks:
   - title: Лужа
     filename: 1 Лужа.mp3
+    duration: 216000
   - title: Космонавт
     filename: 2 Космонавт.mp3
-  - title: Прогулка
-    filename: 4 Прогулка.mp3
+    duration: 237000
   - title: Нуль
     filename: 3 Нуль.mp3
+    duration: 152000
+  - title: Прогулка
+    filename: 4 Прогулка.mp3
+    duration: 305000
   - title: Зеркало
     filename: 5 Зеркало.mp3
+    duration: 208
   - title: Слова на песке
     filename: 6 Слова на песке.mp3
+    duration: 374000
   - title: Камни
     filename: 7 Камни.mp3
+    duration: 188000
