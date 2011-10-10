@@ -11,6 +11,7 @@ global $settings;
 $settings['cache_templates'] = false;
 $settings['debug'] = false;
 $settings['url_base'] = 'http://marsohod1.ru';
+$settings['social'] = true;
 
 // Yandex metrica counter
 $settings['metrica'] = '<!-- Yandex.Metrika counter -->
