@@ -145,9 +145,13 @@ button.play {
 	padding: 10px;
 	text-align: center;
 	color: black;
+	text-decoration: none;
 }
 #menu a:hover {
 	background: #ccccff;
+}
+#menu span {
+	text-decoration: underline;
 }
 .frames {
 	height:140px;
@@ -224,5 +228,13 @@ hr {
 	text-shadow: none;
 }
 .demo2-tracklist .mp3-link:hover {
+	color: #e90000;
+}
+.archive-link {
+	font-size: 0.5em;
+	vertical-align: super;
+	color: #990000;
+}
+.archive-link:hover {
 	color: #e90000;
 }

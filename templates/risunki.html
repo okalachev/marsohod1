@@ -6,6 +6,8 @@
 
 {% block content %}
 
+<h1>&laquo;{{ album.title }}&raquo; <a class="archive-link" href="/media/archive/marsohod1-demo1.rar">скачать демо в архиве</a></h1>
+
 <div class='album-view risunki'>
 	<div id=description>
 		<h1>Рисунки</h1>
@@ -24,7 +26,7 @@
 			{% endfor %}
 		</ol>
 		{{ flash.dew("/risunki.xml") }}
-		<div>Слова и музыка &mdash; Imagine nothing</div>
+		<div>Слова и музыка &mdash; Марсоход#1</div>
 		<div id=links>
 			<a href='http://community.livejournal.com/img_nothing'>http://community.livejournal.com/img_nothing</a><br>
 			<a href='http://vkontakte.ru/club770007'>http://vkontakte.ru/club770007</a><br>
