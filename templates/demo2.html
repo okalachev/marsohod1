@@ -11,15 +11,24 @@
 	{{ photo.thumb(p) }}
 {% endfor %}
 
-<div class="calendar-tracklist">
+<div class="demo2-tracklist">
 	<div class="position"></div>
 	{% for track in album.tracks %}
 		<div class="track" onclick="document.getElementById('player').dewgo({{ loop.index }});document.getElementById('player').dewplay();">
 			<img class="bg" src="/img/calendar-viz/{{ loop.index }}.png"/>
-			<div class="label">{{ loop.index }}. {{ track.title }}</div>
+			<div class="label">
+				{{ loop.index }}. {{ track.title }}
+				<a class="mp3-link" href="/media/audio/{{ album.folder }}/{{ rawurlencode(track.filename) }}">MP3</a>
+			</div>
 		</div>
 	{% endfor %}
 </div>
+
+<script type="text/javascript">
+	$('.mp3-link').click(function(e) {
+		e.stopPropagation();
+	});
+</script>
 
 <hr>
 
