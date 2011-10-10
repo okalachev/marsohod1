@@ -29,4 +29,4 @@ $settings['metrica'] = '<!-- Yandex.Metrika counter -->
 </script></div>
 <script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
 <noscript><div><img src="//mc.yandex.ru/watch/10240978" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->"';
+<!-- /Yandex.Metrika counter -->';
