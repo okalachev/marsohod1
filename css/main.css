@@ -53,6 +53,7 @@ body {
 	float: right;
 	margin-top: 22px;
 	margin-right:12px;
+	width: 163px;
 }
 .album-view.risunki #links {
 	/*margin-top: 59px;*/
@@ -179,17 +180,17 @@ hr {
 .lyrics {
 	font-family: Georgia, "Times New Roman", serif;
 }
-.calendar-tracklist {
+.demo2-tracklist {
 	position: relative;
 	margin-right: 200px;
 }
-.calendar-tracklist .track {
+.demo2-tracklist .track {
 	position:relative;
 	height:50px;
 	margin-bottom:8px;
 	cursor: pointer;
 }
-.calendar-tracklist .label {
+.demo2-tracklist .label {
 	z-index:2;
 	position:absolute;
 	text-align:center;
@@ -200,19 +201,28 @@ hr {
 	text-shadow: 1px 1px white;
 	font-family: Verdana, sans-serif;
 }
-.calendar-tracklist .bg {
+.demo2-tracklist .bg {
 	height: 50px;
 	width: 100%;
 	opacity: 0.7;
 	position: absolute;
 }
-.calendar-tracklist .track:hover .bg {
+.demo2-tracklist .track:hover .bg {
 	opacity: 1;
 }
-.calendar-tracklist .position {
+.demo2-tracklist .position {
 	background-color: #ffffcc;
 	top: 0;
 	left: 0;
 	bottom: 0px;
 	position: absolute;
+}
+.demo2-tracklist .mp3-link {
+	color: #990000;
+	font-size: 0.5em;
+	vertical-align: super;
+	text-shadow: none;
+}
+.demo2-tracklist .mp3-link:hover {
+	color: #e90000;
 }
