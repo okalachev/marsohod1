@@ -10,6 +10,8 @@ include "Site.php";
 $renderer = new Renderer();
 // Add metrica code variable, if is's set
 if (isset($settings['metrica'])) $renderer->add_variable('metrica', $settings['metrica']);
+// Enable social buttons
+if ($settings['social']) $renderer->add_variable('social', true);
 // Main controller
 $site = new Site($renderer);
 

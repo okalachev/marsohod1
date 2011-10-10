@@ -11,6 +11,7 @@
 	<script src='/js/jquery.tools.min.js'></script>
 	<script src="/js/jquery.lightbox-0.5.js"></script>
 	<script src="/js/jquery.mousewheel.min.js"></script>
+
 	<link rel="stylesheet" type="text/css" href="/css/jquery.lightbox-0.5.css" media="screen" />
 	<!--<script type="text/javascript" src="/zoombox/zoombox.js"></script>
 	<link href="/zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />-->
@@ -44,6 +45,9 @@
 
 		<div id=content>
 			{% block content %}{% endblock %}
+			{% if social %}
+				{% include "social.html" %}
+			{% endif %}
 		</div>
 	</div>
 	{{ metrica|default("") }}
