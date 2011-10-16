@@ -1,5 +1,5 @@
 {% macro thumb(url, left) %}
-	<a href='/media/photo/{{ url }}' class='timg {% if left %}l{% endif %}'>
+	<a rel="shadowbox[photos]" href='/media/photo/{{ url }}' class='timg {% if left %}l{% endif %}'>
 		<img src='/media/thumb/{{ url }}'>
 	</a>
 {% endmacro %}
