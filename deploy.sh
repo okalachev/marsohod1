@@ -9,7 +9,7 @@ lftp -c "set ftp:list-options -a;
 open ftp://$USER:$PASS@$HOST; 
 lcd $LCD;
 cd $RCD;
-mirror --reverse --verbose --exclude __ --exclude .sh \
+mirror --reverse --verbose --exclude __ --exclude \.sh \
 --exclude-glob .git/ \
 --exclude-glob .gitignore/ \
 --exclude-glob .idea/ \
