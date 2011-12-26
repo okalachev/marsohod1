@@ -7,5 +7,4 @@ __*
 media/photo/*
 media/thumb/*
 media/archive/*
-/band.photo.yaml
-/demo2.photo.yaml
+/yaml/auto/*.yaml

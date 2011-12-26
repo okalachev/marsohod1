@@ -35,7 +35,8 @@ class Site extends Controller {
 
 	private function load_yaml_data($name) {
 		require_once "spyc.php";
-		return Spyc::YAMLLoad($name . '.yaml');
+		$filename = file_exists("yaml/$name.yaml") ? "yaml/$name.yaml" : "yaml/auto/$name.yaml";
+		return Spyc::YAMLLoad($filename);
 	}
 
 }

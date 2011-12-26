@@ -3,7 +3,7 @@
 # Параметр - название папки с фотографиями в /media/__photo_source
 
 # Удаляем yaml-карту папки
-rm $1.photo.yaml
+rm yaml/auto/$1.photo.yaml
 
 # Удяляем все фотки из папки
 rm "media/photo/$1/*"
@@ -20,6 +20,6 @@ do
 	echo "Thumbnail..."
 	convert -size x120 -resize x120 "$f" "../../thumb/$1/$f"
 	echo "Writing to YAML-file..."
-	echo "$1/$f" >> ../../../$1.photo.yaml
+	echo "$1/$f" >> ../../../yaml/auto/$1.photo.yaml
 	echo "Done"
 done
