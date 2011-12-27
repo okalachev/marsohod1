@@ -239,3 +239,6 @@ hr {
 .archive-link:hover {
 	color: #e90000;
 }
+#sb-body {
+	cursor: pointer;
+}
