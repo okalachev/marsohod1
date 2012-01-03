@@ -21,7 +21,7 @@ $settings['metrica'] = '<!-- Yandex.Metrika counter -->
         try {
             w.yaCounter10240978 = new Ya.Metrika({id:10240978,
                     clickmap:true,
-                    trackLinks:true});
+                    trackLinks:true, webvisor:true});
         }
         catch(e) { }
     });
