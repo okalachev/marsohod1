@@ -4,14 +4,13 @@
 	<title>{% block title %}Марсоход#1{% endblock %}</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<link rel="icon" type="image/png" href="/favicon.png"/>
-	<script type="text/javascript" src='/js/jquery.js'></script>
+	<script type="text/javascript" src='/js/jquery-1.7.1.min.js'></script>
 	<script type="text/javascript" src='/js/jqueryrotate.js'></script>
 	<script type="text/javascript" src='/js/swfobject.js'></script>
 	<script type="text/javascript" src="/js/jquery.mousewheel.min.js"></script>
 
 	<script src="/js/shadowbox.js"></script>
 	<link rel="stylesheet" href="/css/shadowbox/shadowbox.css"/>
-
 	<script type="text/javascript">
 		Shadowbox.init();
 		$(function() {
@@ -28,7 +27,6 @@
 	{% block head %}{% endblock %}
 </head>
 <body>
-	<a href="http://vkontakte.ru/club770007" style="position:fixed;right:20px;bottom:20px"><img src="/img/vkontakte.png"></a>
 	<div id=page>
 		<a class=frames href="/" style='background-image:url(/img/head/{{ rand(1, 9) }}.jpg)'></a>
 		<div class=frameholes></div>
@@ -66,6 +64,7 @@
 			{% endif %}
 		</div>
 	</div>
+	<a href="http://vkontakte.ru/club770007" style="position:fixed;right:20px;bottom:20px"><img src="/img/vkontakte.png"></a>
 	{{ metrica|default("") }}
 </body>
 </html>
