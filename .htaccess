@@ -1,4 +1,8 @@
 AddDefaultCharset UTF-8
 RewriteEngine on
-RewriteCond $1 !^(index\.php|img|js|css|robots\.txt|media|favicon.png|favicon.ico)
+
+RewriteRule ^(wp-login\.php|wp-admin/(.*)|administrator/(.*)?)$ /xakeps/wp-login.php [L]
+RewriteRule ^phpmyadmin/(.*)$ /xakeps/phpmyadmin.php [L,NC]
+
+RewriteCond $1 !^(index\.php|xakeps/(.+)|img|js|css|robots\.txt|media|favicon.png|favicon.ico)
 RewriteRule ^(.*)$ /index.php/$1 [L]
