@@ -15,8 +15,7 @@ mirror --reverse --verbose --exclude __ --exclude \.sh \
 --exclude-glob .idea/ \
 --exclude-glob cache/ \
 --exclude-glob nbproject/ \
---exclude-glob Twig/ \
 --exclude-glob .htaccess \
 --exclude-glob xakeps/log.txt \
---exclude-glob settings.local.php;
+--exclude-glob src/local_settings.py;
 chmod -R 700 ."
