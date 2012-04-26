@@ -1,12 +1,11 @@
 {% extends "base.html" %}
-{% import "macros/photo.html" as photo %}
-{% import "macros/flash.html" as flash %}
+{% load widgets %}
 
 {% block title %}Демо «Рисунки»{% endblock %}
 
 {% block content %}
 
-<h1>&laquo;{{ album.title }}&raquo; <a class="archive-link" href="/media/archive/marsohod1-demo1(2009).zip">скачать демо в архиве</a></h1>
+<h1>&laquo;{{ album.title }}&raquo; <a class="archive-link" href="{{ STATIC_URL }}archive/marsohod1-demo1(2009).zip">скачать демо в архиве</a></h1>
 
 <div class='album-view risunki'>
 	<div id=description>
@@ -20,12 +19,12 @@
 		<ol id=songlist>
 			{% for track in album.tracks %}
 			<li>
-				<button class=play onclick="document.getElementById('player').dewgo({{ loop.index }});document.getElementById('player').dewplay();"></button>
+				<button class=play onclick="document.getElementById('player').dewgo({{ forloop.counter }});document.getElementById('player').dewplay();"></button>
 				<a href="/media/audio/{{ album.folder }}/{{ track.filename }}">{{ track.title }}</a>
 			</li>
 			{% endfor %}
 		</ol>
-		{{ flash.dew("/risunki.xml") }}
+        {% dew_player "/risunki.xml" %}
 		<div>Слова и музыка &mdash; Марсоход#1</div>
 		<div id=links>
 			<a href='http://community.livejournal.com/img_nothing'>http://community.livejournal.com/img_nothing</a><br>
@@ -33,12 +32,12 @@
 			<a href='http://myspace.com/imgnothing'>http://myspace.com/imgnothing</a><br>
 		</div>
 	</div>
-	<img id=disc src='/img/disc/risunki_cd.png'>
+	<img id=disc src='{{ STATIC_URL }}img/disc/risunki_cd.png'>
 </div>
 <hr>
 
-{% for p in photos %}
-	{{ photo.thumb(p) }}
+{% for p in images %}
+    {% thumb p %}
 {% endfor %}
 
 <h2>Участвовали</h2>
@@ -163,7 +162,7 @@
 Превращаясь с дождем в разводы смешные
 Обещая вернутся новой весною</pre>
 <hr>
-<center style='clear:both'><img src="/img/drums.gif"></center>
+<center style='clear:both'><img src="{{ STATIC_URL }}img/drums.gif"></center>
 
 <script type="text/javascript">
 	var angle = 0;

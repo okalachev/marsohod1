@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% import "macros/photo.html" as photo %}
+{% load widgets %}
 
 {% block content %}
 
-{% for p in photos %}
-	{{ photo.thumb(p) }}
+{% for p in images %}
+    {% thumb p %}
 {% endfor %}
 
 <h1>Марсоход#1</h1>
@@ -12,7 +12,7 @@
 	Марсоход &mdash; один.
 </p>
 
-<img src="/img/band2.png"/>
+<img src="{{ STATIC_URL }}img/band2.png"/>
 
 <hr>
 

@@ -1,24 +1,23 @@
 {% extends "base.html" %}
-{% import "macros/photo.html" as photo %}
-{% import "macros/flash.html" as flash %}
+{% load widgets %}
 {% block title %}Демо «{{ album.title }}»{% endblock %}
 
 {% block content %}
 
-<h1><div style="float: right;margin-top:6px;">{{ flash.dew("/demo2.xml") }}</div>&laquo;{{ album.title }}&raquo; <a class="archive-link" href="/media/archive/marsohod1-demo2(2011).zip">скачать демо в архиве</a></h1>
+<h1><div style="float: right;margin-top:6px;">{% dew_player "/demo2.xml" %}</div>&laquo;{{ album.title }}&raquo; <a class="archive-link" href="{{ STATIC_URL }}archive/marsohod1-demo2(2011).zip">скачать демо в архиве</a></h1>
 
-{% for p in photos %}
-	{{ photo.thumb(p) }}
+{% for p in images %}
+	{% thumb p %}
 {% endfor %}
 
 <div class="demo2-tracklist">
 	<div class="position"></div>
 	{% for track in album.tracks %}
-		<div class="track" onclick="document.getElementById('player').dewgo({{ loop.index }});document.getElementById('player').dewplay();">
-			<img class="bg" src="/img/calendar-viz/{{ loop.index }}.png"/>
+		<div class="track" onclick="document.getElementById('player').dewgo({{ forloop.counter }});document.getElementById('player').dewplay();">
+			<img class="bg" src="{{ STATIC_URL }}img/calendar-viz/{{ forloop.counter }}.png"/>
 			<div class="label">
-				{{ loop.index }}. {{ track.title }}
-				<a class="mp3-link" href="/media/audio/{{ album.folder }}/{{ rawurlencode(track.filename) }}">MP3</a>
+				{{ forloop.counter }}. {{ track.title }}
+				<a class="mp3-link" href="/media/audio/{{ album.folder }}/{{ track.filename|iriencode }}">MP3</a>
 			</div>
 		</div>
 	{% endfor %}
@@ -55,7 +54,7 @@
 <h2>Тексты</h2>
 {% for track in album.tracks %}
 	{% if track.lyrics %}
-		<h3>{{ loop.index }}. {{ track.title }}</h3>
+		<h3>{{ forloop.counter }}. {{ track.title }}</h3>
 		<pre class=lyrics>{{ track.lyrics }}</pre>
 	{% endif %}
 {% endfor %}
