@@ -8,3 +8,4 @@ media/photo/*
 media/thumb/*
 media/archive/*
 /data/auto/*.yaml
+passwd.sh

@@ -1,8 +1,10 @@
 #!/bin/bash    
 echo "Deploying marsohod"
 HOST="marsohod1.ru"
-USER="hexeract"
-PASS="8Xa5KizVjq"
+
+# Reading USER ans PASS
+. passwd.sh
+
 LCD=`pwd`/
 RCD="/domains/marsohod1.ru"
 lftp -c "set ftp:list-options -a;
