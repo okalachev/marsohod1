@@ -14,12 +14,12 @@ body {
 }
 .album-view.risunki {
 	width: 859px;
-	background: url(/img/disc/risunki_open.png) no-repeat;
+	background: url(../img/disc/risunki_open.png) no-repeat;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 15px;
 }
 .album-view.risunki.cover {
-	background-image: url(/img/disc/risunki_cover.png);
+	background-image: url(../img/disc/risunki_cover.png);
 	background-position: right top;
 }
 /* Когда альбом закрыт, в нем ничего не видно */
@@ -65,7 +65,7 @@ body {
 .album-view.risunki #disc {
 	awidth:379px;
 	aheight:379px;
-	abackground: url(/img/disc/risunki_cd.png) no-repeat;
+	abackground: url(../img/disc/risunki_cd.png) no-repeat;
 	position: absolute;
 	top: 14px;
 	right: 14px;
@@ -75,7 +75,7 @@ body {
 	margin-left: 27px;
 }
 button.play {
-	background: url(/img/playbutton.png);
+	background: url(../img/playbutton.png);
 	width: 16px;
 	height: 16px;
 	border: none;
@@ -160,7 +160,7 @@ button.play {
 #content {
 	/*margin-left: 200px;*/
 	padding: 5px 20px;
-	abackground: url(/img/transp80.png);
+	abackground: url(../img/transp80.png);
 	background: white;
 }
 p {
@@ -176,7 +176,7 @@ a.timg { float: right; clear: right; margin: 0 0 8px 10px; background: #E0E0E0; 
 a.timg:hover { background: #CCCCCC; }
 a.timg.l { float: left; clear: left; margin: 0 10px 8px 0; }
 .frameholes, hr { 
-	background: white url(/img/framehole.png) repeat-x 0px 2px;
+	background: white url(../img/framehole.png) repeat-x 0px 2px;
 	height: 17px;
 }
 hr { 
