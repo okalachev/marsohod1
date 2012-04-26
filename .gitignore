@@ -1,4 +1,4 @@
-twig
+*.pyc
 .idea
 nbproject
 cache
@@ -7,4 +7,4 @@ __*
 media/photo/*
 media/thumb/*
 media/archive/*
-/yaml/auto/*.yaml
+/data/auto/*.yaml
