@@ -1,8 +1,9 @@
-*.pyc
 .idea
 nbproject
 cache
 __*
+!__*__*
+*.pyc
 *.mp3
 media/photo/*
 media/thumb/*
