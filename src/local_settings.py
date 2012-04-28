@@ -7,3 +7,8 @@ SOCIAL = False
 DEBUG = True
 TEMPLATE_DEBUG = True
 
+INSTALLED_APPS = (
+    'django.contrib.staticfiles',
+    'marso_site',
+)
+
