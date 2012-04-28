@@ -58,10 +58,10 @@
 
 		<div id=content>
 			{% block content %}{% endblock %}
-			{% social %}
+            {% if enable_social %}{% social %}{% endif %}
 		</div>
 	</div>
 	<a href="http://vkontakte.ru/club770007" style="position:fixed;right:20px;bottom:20px"><img src="{{ STATIC_URL }}img/vkontakte.png"></a>
-	{% metrica %}
+	{% if enable_metrica %}{% metrica %}{% endif %}
 </body>
 </html>

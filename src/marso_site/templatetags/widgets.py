@@ -13,11 +13,8 @@ def dew_player(xml_name):
 
 @register.inclusion_tag('tags/metrica.html')
 def metrica():
-    return {
-        'enable': settings.METRICA,
-        'webvisor': settings.METRICA_WEBVISOR,
-    }
+    return { 'webvisor': settings.METRICA_WEBVISOR }
 
 @register.inclusion_tag('tags/social.html')
 def social():
-    return { 'enable': settings.SOCIAL }
+    return { }

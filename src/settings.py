@@ -93,6 +93,11 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
+TEMPLATE_CONTEXT_PROCESSORS += (
+    'marso_site.context_processors.global_settings',
+)
+
 INSTALLED_APPS = (
 #    'django.contrib.auth',
 #    'django.contrib.contenttypes',
