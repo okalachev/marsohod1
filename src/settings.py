@@ -1,6 +1,8 @@
 # encoding: utf-8
 from os import path
 
+PROJECT_PATH = path.dirname(__file__)
+
 DEBUG = False
 TEMPLATE_DEBUG = False
 
@@ -53,7 +55,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    path.realpath('../media'),
+    path.realpath(PROJECT_PATH + '/../media'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -134,7 +136,7 @@ INSTALLED_APPS = (
 #     }
 # }
 
-DATA_ROOT = path.realpath('../data')
+DATA_ROOT = path.realpath(PROJECT_PATH + '/../data')
 
 # Включить Яндекс.Метрику
 METRICA = True
