@@ -1,23 +1,22 @@
 #!/bin/bash    
-echo "Deploying marsohod"
 HOST="marsohod1.ru"
+PRJ_ROOT="/django/marso"
+HT_ROOT="/domains/marsohod1.ru"
+MIRR_CMD="mirror --reverse --verbose --exclude ___"
+LCL_ROOT=`pwd`
 
 # Reading USER ans PASS
-. passwd.sh
+. tools/passwd.sh
 
-LCD=`pwd`/
-RCD="/domains/marsohod1.ru"
 lftp -c "set ftp:list-options -a;
-open ftp://$USER:$PASS@$HOST; 
-lcd $LCD;
-cd $RCD;
-mirror --reverse --verbose --exclude __ --exclude \.sh \
---exclude-glob .git/ \
---exclude-glob .gitignore/ \
---exclude-glob .idea/ \
---exclude-glob cache/ \
---exclude-glob nbproject/ \
---exclude-glob .htaccess \
---exclude-glob xakeps/log.txt \
---exclude-glob src/local_settings.py;
+open ftp://$USER:$PASS@$HOST;
+
+lcd $LCL_ROOT/data; cd $PRJ_ROOT/data; $MIRR_CMD --exclude .txt
+lcd $LCL_ROOT/src; cd $PRJ_ROOT/src; $MIRR_CMD --exclude local_settings.py --exclude .pyc
+lcd $LCL_ROOT/media; cd $HT_ROOT/media; $MIRR_CMD
+lcd $LCL_ROOT/root; cd $HT_ROOT; $MIRR_CMD
+
+cd $PRJ_ROOT
+chmod -R 700 .
+cd $HT_ROOT
 chmod -R 700 ."
