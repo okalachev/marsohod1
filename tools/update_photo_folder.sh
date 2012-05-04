@@ -36,7 +36,7 @@ mkdir "media/photo/$1"
 mkdir "media/thumb/$1"
 
 # Входим в папку исходных фотографий
-cd media/__photo_source/$1/
+cd media/___photo_source/$1/
 
 # Пробегаем по фоткам и ресайзим их
 for f in *
