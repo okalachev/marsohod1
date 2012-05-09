@@ -172,9 +172,26 @@ p {
 	margin: auto;
 }
 .submenu { display: none }
-a.timg { float: right; clear: right; margin: 0 0 8px 10px; background: #E0E0E0; padding: 8px; display: block; text-indent:0; }
-a.timg:hover { background: #CCCCCC; }
-a.timg.l { float: left; clear: left; margin: 0 10px 8px 0; }
+
+.timg {
+    background: #E0E0E0;
+    padding: 8px;
+    display: inline-block;
+    text-indent: 0;
+    margin-left: -8px;
+}
+.timg.l, .timg.r { display: block; margin: 0 0 8px; }
+.timg.l {
+    float: left;
+    clear: left;
+    margin-right: 10px;
+}
+.timg.r {
+    float: right;
+    clear: right;
+    margin-left: 10px;
+}
+
 .frameholes, hr { 
 	background: white url(../img/framehole.png) repeat-x 0px 2px;
 	height: 17px;

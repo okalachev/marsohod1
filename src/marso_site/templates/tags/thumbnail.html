@@ -1,4 +1,14 @@
-{% load static %}
-<a rel="shadowbox[photos]" href='{% get_static_prefix %}photo/{{ name }}' class='timg{% if left %} l{% endif %}'>
+{% load static %}{% spaceless %}
+<a
+        rel="shadowbox[photos]"
+        href="{% get_static_prefix %}photo/{{ name }}"
+        class="timg
+            {% if left %}
+                l
+            {% elif right %}
+                r
+            {% endif %}
+">
     <img src='{% get_static_prefix %}thumb/{{ name}}'>
 </a>
+{% endspaceless %}
