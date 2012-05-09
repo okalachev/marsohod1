@@ -36,3 +36,15 @@ class Album(TemplateView):
                 track['lyrics'] = lyrics[track['title']] if track['title'] in lyrics else None
 
         return context
+
+
+class AlbumWithArtworks(Album):
+    artwork_path = None
+
+    def get_context_data(self, **kwargs):
+        context = super(AlbumWithArtworks, self).get_context_data(**kwargs)
+
+        for number, track in enumerate(context['album']['tracks']):
+            track['artwork'] = self.artwork_path % (number + 1)
+
+        return context

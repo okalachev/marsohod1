@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from .mixins import Gallery, Album
+from .mixins import Gallery, Album, AlbumWithArtworks
 
 class Index(TemplateView):
     template_name = "index.html"
@@ -22,10 +22,11 @@ class Demo1(Gallery, Album):
     gallery_name = "risunki"
     album_name = "risunki"
 
-class Demo2(Gallery, Album):
+class Demo2(Gallery, AlbumWithArtworks):
     template_name = "demo2.html"
     gallery_name = "demo2"
     album_name = "demo2"
+    artwork_path = "demo2-artworks/%d.jpg"
 
 class AlbumXml(Album):
     template_name = 'xml/album.xml'

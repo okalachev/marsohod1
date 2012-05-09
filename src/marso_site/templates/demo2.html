@@ -56,6 +56,9 @@
 	{% if track.lyrics %}
 		<h3>{{ forloop.counter }}. {{ track.title }}</h3>
 		<pre class=lyrics>{{ track.lyrics }}</pre>
+        {% if track.artwork %}
+            {% intext_thumb track.artwork %}
+        {% endif %}
 	{% endif %}
 {% endfor %}
 
