@@ -3,10 +3,11 @@ HOST="marsohod1.ru"
 PRJ_ROOT="/django/marso"
 HT_ROOT="/domains/marsohod1.ru"
 MIRR_CMD="mirror --reverse --verbose --exclude ___"
-LCL_ROOT=`pwd`
+cd `dirname $0`; TOOLS_ROOT=`pwd`; cd -
+LCL_ROOT=$TOOLS_ROOT/..
 
 # Reading USER ans PASS
-. tools/passwd.sh
+. $TOOLS_ROOT/passwd.sh
 
 lftp -c "set ftp:list-options -a;
 open ftp://$USER:$PASS@$HOST;
