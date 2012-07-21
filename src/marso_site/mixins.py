@@ -2,7 +2,6 @@ from django.views.generic import TemplateView
 
 def read_yaml(name):
     from django.conf import settings
-    print settings.DATA_ROOT
     try:
         file = open("%s/%s.yaml" % (settings.DATA_ROOT, name))
     except IOError:
