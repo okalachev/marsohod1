@@ -4,12 +4,12 @@ from django.conf import settings
 register = template.Library()
 
 @register.inclusion_tag("tags/thumbnail.html")
-def thumb(name, right=True):
-    return { 'name': name, 'left': not right, 'right': right }
+def thumb(image, right=True):
+    return { 'image': image, 'left': not right, 'right': right }
 
 @register.inclusion_tag("tags/thumbnail.html")
-def intext_thumb(name):
-    return { 'name': name }
+def intext_thumb(image):
+    return { 'image': image }
 
 @register.inclusion_tag("tags/dew.html")
 def dew_player(xml_name):

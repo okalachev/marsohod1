@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+from .gallery import get_gallery, get_gallery_image
 
 def read_yaml(name):
     from django.conf import settings
@@ -12,10 +13,11 @@ def read_yaml(name):
 
 class Gallery(TemplateView):
     gallery_name = None
+    thumbnail_size = (1000, 120)
 
     def get_context_data(self, **kwargs):
         context = super(Gallery, self).get_context_data(**kwargs)
-        context['images'] = read_yaml('%s.photo' % self.gallery_name)
+        context['images'] = get_gallery(self.gallery_name, self.thumbnail_size)
         return context
 
 
@@ -38,12 +40,16 @@ class Album(TemplateView):
 
 
 class AlbumWithArtworks(Album):
-    artwork_path = None
+    artworks_gallery = None
+    artworks_thumb_size = (5000, 350)
+    artwork_name = '%d.jpg'
 
     def get_context_data(self, **kwargs):
         context = super(AlbumWithArtworks, self).get_context_data(**kwargs)
 
         for number, track in enumerate(context['album']['tracks']):
-            track['artwork'] = self.artwork_path % (number + 1)
+            track['artwork'] = get_gallery_image(
+                self.artworks_gallery, self.artwork_name % (number + 1), self.artworks_thumb_size
+            )
 
         return context

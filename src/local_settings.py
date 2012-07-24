@@ -12,3 +12,4 @@ INSTALLED_APPS = (
     'marso_site',
 )
 
+ENABLE_AUTO_THUMBS = True

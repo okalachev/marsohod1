@@ -26,7 +26,7 @@ class Demo2(Gallery, AlbumWithArtworks):
     template_name = "demo2.html"
     gallery_name = "demo2"
     album_name = "demo2"
-    artwork_path = "demo2-artworks/%d.jpg"
+    artworks_gallery = 'demo2-artworks'
 
 class AlbumXml(Album):
     template_name = 'xml/album.xml'

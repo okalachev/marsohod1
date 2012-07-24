@@ -21,8 +21,10 @@ STATIC_URL = '/media/'
 
 #ADMIN_MEDIA_PREFIX = '/static/admin/'
 
+MEDIA_FOLDER = path.realpath(PROJECT_PATH + '/../media')
+
 STATICFILES_DIRS = (
-    path.realpath(PROJECT_PATH + '/../media'),
+    MEDIA_FOLDER,
 )
 
 STATICFILES_FINDERS = (
@@ -80,6 +82,12 @@ METRICA_WEBVISOR = True
 
 # Включить социальные кнопочки
 SOCIAL = True
+
+# Папка с фотками
+GALLERY_DIR = path.realpath(MEDIA_FOLDER + '/gallery')
+
+# Включить автогенерацию превьюшек
+ENABLE_AUTO_THUMBS = False
 
 try:
     from local_settings import *
