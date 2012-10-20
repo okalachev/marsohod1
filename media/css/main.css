@@ -263,14 +263,12 @@ hr {
 }
 .fisheye-title {
     display: block;
-    padding: 2px 4px;
+    padding: 0.25em 0.7em;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
     position: absolute;
-    border-radius: 4px;
+    border-radius: 0.4em;
     margin-top: 10px;
     /*margin-left: -50%;*/
     text-shadow: 0 1px 0 black;
-    font-size: 0.9em;
-    font-family: monospace;
 }
