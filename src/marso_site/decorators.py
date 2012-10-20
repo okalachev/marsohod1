@@ -1,6 +1,9 @@
+from functools import wraps
+
 def memoize(function):
     """Save the function results to a cache"""
     memo = {}
+    @wraps(function)
     def wrapper(*args):
         if args in memo:
             return memo[args]
