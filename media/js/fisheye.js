@@ -18,9 +18,10 @@
         // Showing title
         $this.on('mouseenter', opts.items, function() {
             var $item = $(this);
+            var title = $item.attr('title') || $item.attr('alt');
             $selected = $item;
-            if ($item.attr('title')) {
-                $title.html($item.attr('title')).show();
+            if (title) {
+                $title.html(title).show();
             }
         });
 
