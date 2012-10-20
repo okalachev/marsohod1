@@ -9,4 +9,4 @@ media/thumb/*
 media/archive/*
 media/gallery/*
 /data/auto/*.yaml
-passwd.sh
+passwd.mk
