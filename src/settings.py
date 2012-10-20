@@ -21,17 +21,7 @@ STATIC_URL = '/media/'
 
 #ADMIN_MEDIA_PREFIX = '/static/admin/'
 
-MEDIA_FOLDER = path.realpath(PROJECT_PATH + '/../media')
-
-STATICFILES_DIRS = (
-    MEDIA_FOLDER,
-)
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
+MEDIA_FOLDER = path.realpath(PROJECT_PATH + '../../../../domains/marsohod1.ru/media/')
 
 SECRET_KEY = 'zdd5depwr4i+kv*$v_xwed1fwlg8r-&otql5qpc1^%+yl=$ye4'
 
@@ -83,9 +73,6 @@ METRICA_WEBVISOR = True
 # Включить социальные кнопочки
 SOCIAL = True
 
-# Папка с фотками
-GALLERY_DIR = path.realpath(MEDIA_FOLDER + '/gallery')
-
 # Включить автогенерацию превьюшек
 ENABLE_AUTO_THUMBS = False
 
@@ -93,3 +80,6 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+# Папка с фотками
+GALLERY_DIR = path.realpath(MEDIA_FOLDER + '/gallery')
