@@ -30,5 +30,9 @@ def get_gallery_image(gallery, image, *args):
 @memoize
 def get_gallery(gallery, *args):
     folder = join(GALLERY_DIR, gallery)
-    images = filter(lambda f: f.lower().endswith(PICTURE_SUFFIX) and not f.lower().endswith(THUMBNAIL_SUFFIX), listdir(folder))
-    return map(lambda image: get_gallery_image(gallery, image, *args), images)
+    images = []
+    for file in listdir(folder):
+        file = file.lower()
+        if file.endswith(PICTURE_SUFFIX) and not file.endswith(THUMBNAIL_SUFFIX):
+            images.append(file)
+    return [get_gallery_image(gallery, image, *args) for image in images]
