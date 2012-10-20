@@ -1,5 +1,6 @@
 # encoding: utf-8
-# Девелоперские настройки
+# Development settings
+from settings import *
 
 METRICA = False
 SOCIAL = False
@@ -7,9 +8,15 @@ SOCIAL = False
 DEBUG = True
 TEMPLATE_DEBUG = True
 
-INSTALLED_APPS = (
+INSTALLED_APPS += (
     'django.contrib.staticfiles',
-    'marso_site',
+    'debug_toolbar',
+)
+
+INTERNAL_IPS = ('127.0.0.1',)
+
+MIDDLEWARE_CLASSES += (
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 )
 
 ENABLE_AUTO_THUMBS = True
