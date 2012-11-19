@@ -13,4 +13,6 @@ urlpatterns = patterns('',
 
     url(r'^records/demo2/$', Demo2.as_view(), name="demo2"),
     url(r'^demo2.xml$', Demo2Xml.as_view()),
+
+    url(r'^records/__3__/$', Demo3.as_view(), name="demo3"),
 )

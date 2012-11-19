@@ -259,3 +259,57 @@ hr {
 #sb-body {
 	cursor: pointer;
 }
+.lyrics-shuffle {
+    cursor: pointer;
+    color: #990000;
+    vertical-align: super;
+    font-size: 0.5em;
+    border: none;
+    background: none;
+}
+
+.record3-tracks {
+    text-align: center;
+    white-space: nowrap;
+    /*background-color: #787772;*/
+}
+
+.record3-tracks .track {
+    width: 160px;
+    height: 472px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.record3-tracks .track:hover {
+    opacity: 0.7;
+}
+
+.record3-tracks .track-1 { background-image: url(../img/3/1.jpg); }
+.record3-tracks .track-2 { background-image: url(../img/3/2.jpg); }
+.record3-tracks .track-3 { background-image: url(../img/3/3.jpg); }
+.record3-tracks .track-4 { background-image: url(../img/3/4.jpg); }
+.record3-tracks .track-5 { background-image: url(../img/3/5.jpg); }
+
+/*
+.record3-tracks {
+    height: 200px;
+    position: relative;
+    text-align: center;
+}
+.record3-tracks .track {
+    position: absolute;
+    -moz-transform-origin: center;
+    height: 180px;
+}
+.record3-tracks .track-1 {  }
+.record3-tracks .track-2 { -moz-transform: rotate(72deg) }
+.record3-tracks .track-3 { -moz-transform: rotate(144deg) }
+.record3-tracks .track-4 { -moz-transform: rotate(216deg) }
+.record3-tracks .track-5 { -moz-transform: rotate(288deg) }
+li {
+    list-style: hebrew;
+}
+*/

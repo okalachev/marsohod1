@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+
+{% block title %}«{{ album.title }}»{% endblock %}
+
+{% block head %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jPlayer/jquery.jplayer.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jPlayer/jplayer.playlist.min.js"></script>
+
+    <script type="text/javascript">
+        $(function() {
+            var list = [
+                {% for track in album.tracks %}
+                    {
+                        title: "{{ track.title }}",
+                        mp3: '{{ STATIC_URL }}audio/{{ album.folder }}/{{ track.filename }}',
+                        ogg: '{{ STATIC_URL }}audio/{{ album.folder }}/{{ track.alter }}'
+                    },
+                {% endfor %}
+            ];
+            var playlist = new jPlayerPlaylist({
+                jPlayer: "#jPlayer",
+                cssSelectorAncestor: "#jPlayer-container"
+            }, list, {
+                swfPath: "{{ STATIC_URL }}js/jPlayer",
+                solution: "html, flash",
+                supplied:"mp3, ogg",
+                loop: true
+            });
+            $('.record3-tracks').on('click', '.track', function(e) {
+                var track = $(this).attr('data-track');
+                if (track == playlist.current) {
+                    // TODO: seek for position
+                }
+                playlist.play(track);
+            });
+            var element = $('#jPlayer');
+            var progressTimer = window.setInterval(function() {
+                var position = element.data('jPlayer').status.currentPercentAbsolute;
+                var tracks = $('.record3-tracks .track');
+                var track = tracks.eq(playlist.current);
+                var height = track.height();
+                tracks.css('background-position-y', '');
+                track.css('background-position-y', (position / 100 * height) + 'px');
+            }, 10);
+        });
+    </script>
+{% endblock %}
+
+{% block content %}
+    <div id="jPlayer-container"><div id="jPlayer"></div></div>
+
+    <div class="record3-tracks">
+        <div class="prev"></div>
+        {% for track in album.tracks %}<div
+                class="track track-{{ forloop.counter }}"
+                data-track="{{ forloop.counter0 }}"
+                title="{{ track.title }}"></div>{% endfor %}
+        <div class="next"></div>
+    </div>
+
+    <script>
+//        function rotate() {
+//            $('.record3-tracks .track').each(function() {
+//                var match = $(this).attr('class').match(/track-(\d*)/);
+//                var cl = match[0];
+//                var i = parseInt(match[1]);
+//                i = i == 1 ? 5 : i - 1;
+//                $(this).removeClass(cl).addClass('track-' + i);
+//            });
+//        }
+    </script>
+
+    <h2>Участвовали</h2>
+    <ul>
+        <li>Евгений Гамза — голос, барабаны, труба, шейкер</li>
+        <li>Алексей Шлыков — гитара</li>
+        <li>Олех Калачев — пианино, бас-гитара, бэк</li>
+        <li style="margin-top: 1em">Алексей Кузнецов — сведение, звук</li>
+        <li>Андрей Кравченко — звук</li>
+        <li>Дмитрий Киряков — звук</li>
+        <li>Артем Петухов — бас-балалайка</li>
+        <li>Алексей Зверев — редактирование</li>
+    </ul>
+
+    <h2>Записи о</h2>
+    <p>
+        Запись была сделана на Питерской студии «Галерная 20», студиях «Нота», «y-wave» и в Краснопахорской детской школе искусств.
+    </p>
+
+    <h2>
+        Тексты
+        <button class="lyrics-shuffle">перемешать</button>
+    </h2>
+    {% for track in album.tracks %}
+        {% if track.lyrics %}
+            <h3>{{ forloop.counter }}. {{ track.title }}</h3>
+            <pre class=lyrics>{{ track.lyrics }}</pre>
+        {% endif %}
+    {% endfor %}
+
+    <script type="text/javascript">
+        $('.lyrics-shuffle').click(function() {
+            function shuffle( array ) {	// Shuffle an array
+                for(var j, x, i = array.length; i; j = parseInt(Math.random() * i), x = array[--i], array[i] = array[j], array[j] = x);
+                return true;
+            }
+            $('.lyrics').each(function() {
+                var lines = $(this).html().split('\n');
+                // Remove empty lines
+//                lines = lines.filter(function(e) {
+//                    return !(/^\s*$/.test(e));
+//                });
+                do {
+                    shuffle(lines)
+                } while (/(\n{3,})|(^\n)|(\n\n$)/.test(lines.join('\n')));
+                $(this).html(lines.join('\n'));
+            });
+        });
+    </script>
+
+{% endblock %}
