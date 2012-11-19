@@ -1,0 +1,11 @@
+<script type="text/javascript">
+    var playlist = [
+        {% for track in album.tracks %}
+            {
+                title: "{{ track.title }}",
+                mp3: '{{ STATIC_URL }}audio/{{ album.folder }}/{{ track.filename }}',
+                oga: '{{ STATIC_URL }}audio/{{ album.folder }}/{{ track.alter }}'
+            },
+        {% endfor %}
+    ];
+</script>
