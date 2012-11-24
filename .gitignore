@@ -4,7 +4,6 @@ cache
 ___*
 *.pyc
 *.mp3
-media/archive/*
-media/gallery/*
+media/gallery/*/*.thumb.*
 /data/auto/*.yaml
 passwd.mk
