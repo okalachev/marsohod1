@@ -28,9 +28,9 @@ class Demo2(Gallery, AlbumWithArtworks):
     album_name = "demo2"
     artworks_gallery = 'demo2-artworks'
 
-class Demo3(Album):
-    template_name = "demo3.html"
-    album_name = "demo3"
+class Record3(Album):
+    template_name = "record3.html"
+    album_name = "record3"
 
 class AlbumXml(Album):
     template_name = 'xml/album.xml'
