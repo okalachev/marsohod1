@@ -3,7 +3,6 @@ nbproject
 cache
 ___*
 *.pyc
-*.mp3
 media/gallery/*/*.thumb.*
 /data/auto/*.yaml
 passwd.mk
