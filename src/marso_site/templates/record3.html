@@ -38,7 +38,22 @@
 {% endblock %}
 
 {% block content %}
-    <div id="jPlayer-container"><div id="jPlayer"></div></div>
+    <h1>
+        <div id="jPlayer-container" class="jp" style="float:right">
+            <div id="jPlayer"></div>
+            <button class="jp-previous">Prev</button>
+            <button class="jp-play">Play</button>
+            <button class="jp-pause">Pause</button>
+            <button class="jp-next">Next</button>
+            <div class="jp-seek-bar">
+                <div class="jp-play-bar"></div>
+            </div>
+            <div class="jp-volume-bar">
+                <div class="jp-volume-bar-value"></div>
+            </div>
+        </div>
+        &laquo;{{ album.title }}&raquo;
+    </h1>
 
     <div class="record3-tracks">
         <div class="prev"></div>

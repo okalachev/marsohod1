@@ -313,3 +313,28 @@ li {
     list-style: hebrew;
 }
 */
+
+/* Player skin */
+.jp {
+}
+
+.jp .jp-seek-bar {
+    width: 200px !important;
+    display: inline-block;
+    height: 8px;
+    background-color: #f4edff;
+    position: relative;
+    cursor: pointer;
+}
+
+.jp .jp-seek-bar:hover {
+    background-color: #ebe5f5;
+}
+
+.jp .jp-play-bar {
+    background-color: #6f7378;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
