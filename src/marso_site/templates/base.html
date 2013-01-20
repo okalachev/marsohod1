@@ -8,6 +8,7 @@
 	<script type="text/javascript" src='{{ STATIC_URL }}js/jqueryrotate.js'></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.mousewheel.min.js"></script>
 	<script type="text/javascript" src="{{ STATIC_URL }}js/shadowbox.js"></script>
+	<script type="text/javascript" src="{{ STATIC_URL }}js/fisheye.js"></script>
 	<link rel="stylesheet" href="{{ STATIC_URL }}css/shadowbox/shadowbox.css"/>
 	<script type="text/javascript">
 		Shadowbox.init();
@@ -19,6 +20,7 @@
 					Shadowbox.next();
 				}
 			);
+			$('#menu').fisheye({ items: 'img' });
 		});
 	</script>
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css"/>
@@ -29,30 +31,12 @@
 		<a class=frames href="{% url index %}" style='background-image:url({{ STATIC_URL }}img/head/{% rand 1 9 %}.jpg)'></a>
 		<div class=frameholes></div>
 		<div id=menu>
-			<a href="{% url band %}">
-				<img src='{{ STATIC_URL }}img/menu/logo2.png'><br>
-				<span>Группа</span>
-			</a>
-			<a href="{% url demo2 %}">
-				<img src='{{ STATIC_URL }}img/menu/demo2.png' title="55°28'06.9&quot; 37°17'11.9&quot; (2011)"><br>
-				<span>Демо &laquo;<em>55°28'06.9&quot; 37°17'11.9&quot;</em>&raquo; (2011)</span>
-			</a>
-			<a href="{% url demo1 %}">
-				<img src='{{ STATIC_URL }}img/menu/risunki.png' title='"Рисунки" (2009)'><br>
-				<span>Демо &laquo;<em>Рисунки</em>&raquo; (2009)</span>
-			</a>
-			<a href="{% url pano %}">
-				<img src='{{ STATIC_URL }}img/menu/base.png'><br>
-				<span>База для выхода в космос</span>
-			</a>
-			<a href="{% url calls %}">
-				<img src='{{ STATIC_URL }}img/menu/calls.png'><br>
-				<span>Позывные</span>
-			</a>
-			<a href='{% url video %}'>
-				<img src="{{ STATIC_URL }}img/menu/video.png"><br>
-				<span>Видео</span>
-			</a>
+			<a href="{% url band %}"><img src='{{ STATIC_URL }}img/menu/logo2.png' alt="Группа"></a>
+			<a href="{% url demo2 %}"><img src='{{ STATIC_URL }}img/menu/demo2.png' alt="«55°28'06.9&quot; 37°17'11.9&quot;» (2011)"></a>
+			<a href="{% url demo1 %}"><img src='{{ STATIC_URL }}img/menu/risunki.png' alt="«Рисунки» (2009)"></a>
+			<a href="{% url pano %}"><img src='{{ STATIC_URL }}img/menu/base.png' alt="База для выхода в космос"></a>
+			<a href="{% url calls %}"><img src='{{ STATIC_URL }}img/menu/calls.png' alt="Позывные"></a>
+			<a href='{% url video %}'><img src="{{ STATIC_URL }}img/menu/video.png" alt="Видео"></a>
 		</div>
 
 		<div id=content>
