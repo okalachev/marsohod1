@@ -28,9 +28,11 @@ class Demo2(Gallery, AlbumWithArtworks):
     album_name = "demo2"
     artworks_gallery = 'demo2-artworks'
 
-class Record3(Album):
+class Record3(Gallery, AlbumWithArtworks):
+    gallery_name = "projections"
     template_name = "record3.html"
     album_name = "record3"
+    artworks_gallery = "projections-artworks"
 
 class AlbumXml(Album):
     template_name = 'xml/album.xml'
