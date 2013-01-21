@@ -32,7 +32,6 @@ def get_gallery(gallery, *args):
     folder = join(GALLERY_DIR, gallery)
     images = []
     for file in listdir(folder):
-        file = file.lower()
-        if file.endswith(PICTURE_SUFFIX) and not file.endswith(THUMBNAIL_SUFFIX):
+        if file.lower().endswith(PICTURE_SUFFIX) and not file.lower().endswith(THUMBNAIL_SUFFIX):
             images.append(file)
     return [get_gallery_image(gallery, image, *args) for image in images]
