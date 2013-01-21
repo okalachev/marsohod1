@@ -51,9 +51,11 @@
                     .css('margin-top', -(px - opts.from) + 'px');
                     //.css('box-shadow', '0 0 ' + (mult * 20) + 'px 0 silver')
             });
-            $title
-                .css('top', $selected.offset().top + $selected.height())
-                .css('left', $selected.offset().left + $selected.width() / 2 - $title.outerWidth() / 2);
+            if ($selected.length) {
+                $title
+                    .css('top', $selected.offset().top + $selected.height())
+                    .css('left', $selected.offset().left + $selected.width() / 2 - $title.outerWidth() / 2);
+            }
         });
 
     }
