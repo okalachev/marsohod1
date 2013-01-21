@@ -1,59 +1,24 @@
 {% extends "base.html" %}
+{% load widgets %}
 
 {% block title %}«{{ album.title }}»{% endblock %}
 
 {% block head %}
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jPlayer/jquery.jplayer.min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jPlayer/jplayer.playlist.min.js"></script>
-    {% include "json_playlist.html" %}
+    <script src="https://w.soundcloud.com/player/api.js"></script>
     <script type="text/javascript">
         $(function() {
-            var playlistPlayer = new jPlayerPlaylist({
-                jPlayer: "#jPlayer",
-                cssSelectorAncestor: "#jPlayer-container"
-            }, playlist, {
-                swfPath: "{{ STATIC_URL }}js/jPlayer",
-                solution: "html, flash",
-                supplied: "mp3, oga",
-                loop: true
-            });
+            var player = SC.Widget($('#sc-player').get(0));
             $('.record3-tracks').on('click', '.track', function(e) {
-                var track = $(this).attr('data-track');
-                if (track == playlistPlayer.current) {
-                    // TODO: seek for position
-                }
-                playlistPlayer.play(track);
+                var track = Number($(this).attr('data-track'));
+                player.skip(track);
+                player.play();
             });
-            var element = $('#jPlayer');
-            var progressTimer = window.setInterval(function() {
-                var position = element.data('jPlayer').status.currentPercentAbsolute;
-                var tracks = $('.record3-tracks .track');
-                var track = tracks.eq(playlistPlayer.current);
-                var height = track.height();
-                tracks.css('background-position-y', '');
-                track.css('background-position-y', (position / 100 * height) + 'px');
-            }, 10);
         });
     </script>
 {% endblock %}
 
 {% block content %}
-    <h1>
-        <div id="jPlayer-container" class="jp" style="float:right">
-            <div id="jPlayer"></div>
-            <button class="jp-previous">Prev</button>
-            <button class="jp-play">Play</button>
-            <button class="jp-pause">Pause</button>
-            <button class="jp-next">Next</button>
-            <div class="jp-seek-bar">
-                <div class="jp-play-bar"></div>
-            </div>
-            <div class="jp-volume-bar">
-                <div class="jp-volume-bar-value"></div>
-            </div>
-        </div>
-        &laquo;{{ album.title }}&raquo;
-    </h1>
+    <iframe id="sc-player" width="100%" height="165" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F3388581&amp;color=283aa4&amp;auto_play=false&amp;show_artwork=false"></iframe>
 
     <div class="record3-tracks">
         <div class="prev"></div>
@@ -63,32 +28,24 @@
                 title="{{ track.title }}"></div>{% endfor %}
         <div class="next"></div>
     </div>
+    <hr>
 
-    <script>
-//        function rotate() {
-//            $('.record3-tracks .track').each(function() {
-//                var match = $(this).attr('class').match(/track-(\d*)/);
-//                var cl = match[0];
-//                var i = parseInt(match[1]);
-//                i = i == 1 ? 5 : i - 1;
-//                $(this).removeClass(cl).addClass('track-' + i);
-//            });
-//        }
-    </script>
+    {% for p in images %}
+        {% thumb p %}
+    {% endfor %}
 
     <h2>Участвовали</h2>
     <ul>
         <li>Евгений Гамза — голос, барабаны, труба, шейкер</li>
         <li>Алексей Шлыков — гитара</li>
         <li>Олех Калачев — пианино, бас-гитара, бэк</li>
-        <li style="margin-top: 1em">Алексей Кузнецов — сведение, звук</li>
-        <li>Андрей Кравченко — звук</li>
-        <li>Дмитрий Киряков — звук</li>
+        <li>Алексей Кузнецов — сведение, запись</li>
+        <li>Андрей Кравченко — запись</li>
+        <li>Дмитрий Киряков — запись</li>
         <li>Артем Петухов — бас-балалайка</li>
-        <li>Алексей Зверев — редактирование</li>
     </ul>
 
-    <h2>Записи о</h2>
+    <h2>О записи</h2>
     <p>
         Запись была сделана на Питерской студии «Галерная 20», студиях «Нота», «y-wave» и в Краснопахорской детской школе искусств.
     </p>
@@ -101,6 +58,9 @@
         {% if track.lyrics %}
             <h3>{{ forloop.counter }}. {{ track.title }}</h3>
             <pre class=lyrics>{{ track.lyrics }}</pre>
+            {% if track.artwork %}
+                {% intext_thumb track.artwork %}
+            {% endif %}
         {% endif %}
     {% endfor %}
 

@@ -273,6 +273,7 @@ hr {
 .record3-tracks {
     text-align: center;
     white-space: nowrap;
+    margin: 15px 0;
     /*background-color: #787772;*/
 }
 
