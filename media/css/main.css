@@ -1,0 +1,355 @@
+a img {
+	border: none;
+}
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	padding: 0;
+	margin: 0;
+}
+.album-view {
+	height: 400px;
+	position: relative;
+	margin: auto;
+}
+.album-view.risunki {
+	width: 859px;
+	background: url(../img/disc/risunki_open.png) no-repeat;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 15px;
+}
+.album-view.risunki.cover {
+	background-image: url(../img/disc/risunki_cover.png);
+	background-position: right top;
+}
+/* Когда альбом закрыт, в нем ничего не видно */
+.album-view.cover * {
+	display: none;
+}
+.album-view.risunki #description {
+	padding: 23px 0 0 35px;
+	width: 373px;
+}
+.album-view.risunki h1 {
+	font-size: 21px;
+	margin: 0;
+	text-align: center;
+}
+.album-view.risunki h2 {
+	font-size: 23px;
+	margin: 0;
+	font-weight:normal;
+}
+.album-view.risunki #songlist {
+	margin: 27px 0 0px 0;
+	padding-left: 30px;
+	display: inline-block;
+	font-size: 16px;
+}
+.album-view.risunki #songlist li {
+	/*height: 22px;*/
+}
+.album-view.risunki #info {
+	float: right;
+	margin-top: 22px;
+	margin-right:12px;
+	width: 163px;
+}
+.album-view.risunki #links {
+	/*margin-top: 59px;*/
+	margin-top: 25px;
+}
+.album-view.risunki a {
+	color: black;
+}
+.album-view.risunki #disc {
+	awidth:379px;
+	aheight:379px;
+	abackground: url(../img/disc/risunki_cd.png) no-repeat;
+	position: absolute;
+	top: 14px;
+	right: 14px;
+}
+.album-view #player {
+	margin-bottom: 36px;
+	margin-left: 27px;
+}
+button.play {
+	background: url(../img/playbutton.png);
+	width: 16px;
+	height: 16px;
+	border: none;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.albumlist {
+	float: left;
+	text-align: center;
+	width: 190px;
+}
+.albumlist img {
+	box-shadow: 1px 1px 4px gray;
+}
+#header {
+	color: #eaeeff;
+	font-size: 28px;
+	text-align: center;
+	padding: 10px 20px;
+	background: black;
+}
+#header a {
+	margin-right: 50px;
+	margin-left: 50px;
+	color: #7b94ff;
+	text-align: center;
+}
+#header a.main {
+	color: #eaeeff;
+}
+#mainmenu {
+	width: 800px;
+	height: 175px;
+	/*background: url(/img/mainmenu.jpg) no-repeat;*/
+	float: right;
+	position:relative;
+}
+#mainmenu a {
+	position: absolute;
+}
+#mainmenu .main{
+	height: 85px;
+	left: 21px;
+	top: 50px;
+	width: 288px;
+}
+#mainmenu .concerts{
+	height: 62px;
+	left: 344px;
+	top: 52px;
+	width: 229px;
+
+}
+#mainmenu .records{
+	height: 56px;
+	left: 614px;
+	top: 51px;
+	width: 144px;
+}
+#menu {
+	white-space: nowrap;
+    text-align: center;
+}
+#menu a {
+	display: inline-block;
+	padding: 9px;
+	text-align: center;
+	color: black;
+	text-decoration: none;
+}
+/*#menu img:hover {*/
+	/*background: #ccccff;*/
+/*}*/
+#menu img {
+    height: 110px;
+}
+#menu span {
+	text-decoration: underline;
+}
+.frames {
+	height:140px;
+	display: block;
+}
+#content {
+	/*margin-left: 200px;*/
+	padding: 5px 20px;
+	abackground: url(../img/transp80.png);
+	background: white;
+}
+p {
+	text-indent: 15px;
+	line-height: 1.3em;
+}
+#page {
+	width: 900px;
+	margin: auto;
+}
+.submenu { display: none }
+
+.timg {
+    background: #E0E0E0;
+    padding: 8px;
+    display: inline-block;
+    text-indent: 0;
+    margin-left: -8px;
+}
+.timg.l, .timg.r { display: block; margin: 0 0 8px; }
+.timg.l {
+    float: left;
+    clear: left;
+    margin-right: 10px;
+}
+.timg.r {
+    float: right;
+    clear: right;
+    margin-left: 10px;
+}
+
+.frameholes, hr { 
+	background: white url(../img/framehole.png) repeat-x 0px 2px;
+	height: 17px;
+}
+hr { 
+	border: none;
+}
+.lyrics {
+	font-family: Georgia, "Times New Roman", serif;
+}
+.demo2-tracklist {
+	position: relative;
+	margin-right: 200px;
+}
+.demo2-tracklist .track {
+	position:relative;
+	height:50px;
+	margin-bottom:8px;
+	cursor: pointer;
+}
+.demo2-tracklist .label {
+	z-index:2;
+	position:absolute;
+	text-align:center;
+	font-size:1.6em;
+	width:100%;
+	top:50%;
+	margin-top:-0.7em;
+	text-shadow: 1px 1px white;
+	font-family: Verdana, sans-serif;
+}
+.demo2-tracklist .bg {
+	height: 50px;
+	width: 100%;
+	opacity: 0.7;
+	position: absolute;
+}
+.demo2-tracklist .track:hover .bg {
+	opacity: 1;
+}
+.demo2-tracklist .position {
+	background-color: #ffffcc;
+	top: 0;
+	left: 0;
+	bottom: 0px;
+	position: absolute;
+}
+.demo2-tracklist .mp3-link {
+	color: #990000;
+	font-size: 0.5em;
+	vertical-align: super;
+	text-shadow: none;
+}
+.demo2-tracklist .mp3-link:hover {
+	color: #e90000;
+}
+.archive-link {
+	font-size: 0.5em;
+	vertical-align: super;
+	color: #990000;
+}
+.archive-link:hover {
+	color: #e90000;
+}
+#sb-body {
+	cursor: pointer;
+}
+.lyrics-shuffle {
+    cursor: pointer;
+    color: #990000;
+    vertical-align: super;
+    font-size: 0.5em;
+    border: none;
+    background: none;
+}
+
+.record3-tracks {
+    text-align: center;
+    white-space: nowrap;
+    margin: 15px 0;
+    /*background-color: #787772;*/
+}
+
+.record3-tracks .track {
+    width: 160px;
+    height: 472px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.record3-tracks .track:hover {
+    opacity: 0.8;
+}
+
+.record3-tracks .track-1 { background-image: url(../img/3/1.jpg); }
+.record3-tracks .track-2 { background-image: url(../img/3/2.jpg); }
+.record3-tracks .track-3 { background-image: url(../img/3/3.jpg); }
+.record3-tracks .track-4 { background-image: url(../img/3/4.jpg); }
+.record3-tracks .track-5 { background-image: url(../img/3/5.jpg); }
+
+/*
+.record3-tracks {
+    height: 200px;
+    position: relative;
+    text-align: center;
+}
+.record3-tracks .track {
+    position: absolute;
+    -moz-transform-origin: center;
+    height: 180px;
+}
+.record3-tracks .track-1 {  }
+.record3-tracks .track-2 { -moz-transform: rotate(72deg) }
+.record3-tracks .track-3 { -moz-transform: rotate(144deg) }
+.record3-tracks .track-4 { -moz-transform: rotate(216deg) }
+.record3-tracks .track-5 { -moz-transform: rotate(288deg) }
+li {
+    list-style: hebrew;
+}
+*/
+
+/* Player skin */
+.jp {
+}
+
+.jp .jp-seek-bar {
+    width: 200px !important;
+    display: inline-block;
+    height: 8px;
+    background-color: #f4edff;
+    position: relative;
+    cursor: pointer;
+}
+
+.jp .jp-seek-bar:hover {
+    background-color: #ebe5f5;
+}
+
+.jp .jp-play-bar {
+    background-color: #6f7378;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.fisheye-title {
+    display: block;
+    padding: 0.25em 0.7em;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    position: absolute;
+    border-radius: 0.4em;
+    margin-top: 10px;
+    /*margin-left: -50%;*/
+    text-shadow: 0 1px 0 black;
+}

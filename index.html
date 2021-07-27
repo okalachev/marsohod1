@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Марсоход#1</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="icon" type="image/png" href="/favicon.png"/>
+	<script type="text/javascript" src='/media/js/jquery-1.7.1.min.js'></script>
+	<script type="text/javascript" src='/media/js/jqueryrotate.js'></script>
+	<script type="text/javascript" src="/media/js/jquery.mousewheel.min.js"></script>
+	<script type="text/javascript" src="/media/js/shadowbox.js"></script>
+	<script type="text/javascript" src="/media/js/fisheye.js"></script>
+	<link rel="stylesheet" href="/media/css/shadowbox/shadowbox.css"/>
+	<script type="text/javascript">
+		Shadowbox.init();
+		$(function() {
+			$('body').delegate(
+				'#sb-player',
+				'click',
+				function() {
+					Shadowbox.next();
+				}
+			);
+			$('#menu').fisheye({ items: 'img' });
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" href="/media/css/main.css"/>
+	
+</head>
+<body>
+	<div id=page>
+		<a class=frames href="/" style='background-image:url(/media/img/head/9.jpg)'></a>
+		<div class=frameholes></div>
+		<div id=menu>
+			<a href="/band/"><img src='/media/img/menu/logo2.png' alt="Группа"></a>
+			<a href="/records/projections/"><img src='/media/img/menu/projections.png' alt="«Проекции» (2012)"></a>
+			<a href="/records/demo2/"><img src='/media/img/menu/demo2.png' alt="«55°28'06.9&quot; 37°17'11.9&quot;» (2011)"></a>
+			<a href="/records/risunki/"><img src='/media/img/menu/risunki.png' alt="«Рисунки» (2009)"></a>
+			<a href="/base/"><img src='/media/img/menu/base.png' alt="База для выхода в космос"></a>
+			<a href="/calls/"><img src='/media/img/menu/calls.png' alt="Позывные"></a>
+			<a href='/video/'><img src="/media/img/menu/video.png" alt="Видео"></a>
+		</div>
+
+		<div id=content>
+			
+	<div style="margin-top: 50px; text-align: center; height: 700px;">
+		<img src="/media/img/welcome_tr.png" width="600px"/>
+	</div>
+	<script type="text/javascript">
+		var
+			angle=0,
+			$welcomeImg = $('#content img');
+
+		$(window).mousemove(
+			function(event) {
+				var angle = 360 * event.pageX / $(window).width();
+				$welcomeImg.rotate(angle);
+			}
+		);
+	</script>
+
+            
+		</div>
+	</div>
+	<a href="http://vkontakte.ru/club770007" style="position:fixed;right:20px;bottom:20px"><img src="/media/img/vkontakte.png"></a>
+	
+</body>
+</html>
